@@ -188,7 +188,7 @@ angular.module('angularPayments')
 
     value = $target.val() + digit;
     
-    if(value.length <= 4){
+    if(value && value.length <= 4){
       return;
     } else {
       e.preventDefault();

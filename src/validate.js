@@ -39,7 +39,7 @@ angular.module('angularPayments')
       var ref, ref1;
 
       // valid if empty - let ng-required handle empty
-      if(cvc === null || cvc.length === 0) return true;
+      if(!cvc) return true;
 
       if (!/^\d+$/.test(cvc)) {
         return false;
@@ -51,7 +51,7 @@ angular.module('angularPayments')
           type = typeModel(scope);
       }
 
-      if (type) {
+      if (type && cvc) {
         return ref = cvc.length, __indexOf.call((ref1 = Cards.fromType(type)) !== null ? ref1.cvcLength : void 0, ref) >= 0;
       } else {
         return cvc.length >= 3 && cvc.length <= 4;
@@ -73,7 +73,7 @@ angular.module('angularPayments')
       };
 
       // valid if empty - let ng-required handle empty
-      if(num === null || num.length === 0){
+      if(!num){
         clearCard();
         return true;
       }
