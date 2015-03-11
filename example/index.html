@@ -7,6 +7,8 @@
     <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
 
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    
+    <script src="https://checkout.stripe.com/checkout.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
     
@@ -15,7 +17,7 @@
     <script>
 
 
-    Stripe.setPublishableKey('fillMePlease')
+    Stripe.setPublishableKey('pk_test_aj305u5jk2uN1hrDQWdH0eyl');
 
     angular.module('app', ['angularPayments'])
 
@@ -114,6 +116,18 @@
             </form>
 
           </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="span4 offset4" style="margin-top: 20px">
+          <h3>Checkout Button</h3>
+          <button stripe-checkout
+              key="pk_test_aj305u5jk2uN1hrDQWdH0eyl"
+              img="img/angry-cat.jpg"
+              name="Checkout"
+              description="angry cat"
+              amount="100000" class="btn-primary btn-large">Checkout!</button>
         </div>
       </div>
 
